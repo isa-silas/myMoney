@@ -5,19 +5,27 @@ interface Props {
     title: string;
     total: string;
     lastTransaction:string;
-    icon:string;
+    type:'income'|'outcome'|'total';
 }
 
-export function Panel({title,total,lastTransaction,icon}: Props) {
+const icons = {
+    income: 'arrow-circle-up',
+    outcome: 'arrow-circle-down',
+    total: 'dollar-sign'
+}
+export function Panel({title,total,lastTransaction,type}: Props) {
     return (
-        <Container>
+        <Container type={type}>
             <Header>
-                <Title>{title}</Title>
-                <Icon name={icon}/>
+                <Title type={type}>{title}</Title>
+                <Icon 
+                name={icons[type]}
+                type = {type}
+                />
             </Header>
-            <Footer>
-                <Total>{total}</Total>
-                <LastTransaction>{lastTransaction}</LastTransaction>
+            <Footer type={type}>
+                <Total type={type}>{total}</Total>
+                <LastTransaction type={type}>{lastTransaction}</LastTransaction>
             </Footer>
         </Container>
     )
