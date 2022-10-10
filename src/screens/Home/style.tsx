@@ -62,7 +62,8 @@ export const Panels = styled.ScrollView.attrs({
     margin-top:75px;
 `
 
-export const Transactions = styled.View`
-    // flex: 1;
-    background-color: #fff;
-`
+// export const Transactions = styled.View`
+//     // flex: 1;
+//     background-color: #fff;
+// `
+export const Transactions = styled.FlatList``

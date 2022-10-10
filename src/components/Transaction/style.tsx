@@ -38,4 +38,3 @@ export const CategoryName = styled.Text`
     margin-left: 12px;
 `
 
-export const Transactions = styled.FlatList``
