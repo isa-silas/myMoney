@@ -75,7 +75,7 @@ export const Icon = styled(icon)`
     color: ${({color})=>color=='green'?'#22d10f':'#ba1318'};
     // background-color: #03045e;
 `
-export const Category = styled.View`
+export const CategoryComponent = styled.View`
     flex: 1;
     background-color: #e5e5e5;
 `

@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from 'react'
+import {Modal} from 'react-native'
 import {
-    Container, Header, RegisterInfo, RegisterPrice, RegisterName, Cards, Category, SendBtn, Title,
+    Container, Header, RegisterInfo, RegisterPrice, RegisterName, Cards, CategoryComponent, SendBtn, Title,
     Card, CardLabel, Icon, LabelBtn, ContainerBtn
 
 } from "./style"
+import { SelectButton } from "./SelectButton/index"
+import {Category} from "../../screens/Category"
+
 
 export function Register() {
+    const [categoria, setCategoria] = useState({
+        chave: 'categoria',
+        nome: 'Categoria',
+        icone: 'list'
+      })
+
     return (
         <Container>
             <Header>
@@ -28,10 +38,20 @@ export function Register() {
                 <Category />
             </RegisterInfo>
             <ContainerBtn>
+            <SelectButton
+                title={categoria.nome}
+                icon={categoria.icone}
+                onPress={() => { }} />
                 <SendBtn>
                     <LabelBtn>Send</LabelBtn>
                 </SendBtn>
             </ContainerBtn>
+            <Modal visible={false}>
+            <SelectButton
+                title={categoria.nome}
+                icon={categoria.icone}
+                onPress={() => { }} />
+            </Modal>
         </Container>
     )
 }
