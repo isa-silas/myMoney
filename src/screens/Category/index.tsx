@@ -34,13 +34,13 @@ export function Category({category}:CategoryProps){
             />
             <Footer>
             <ContainerBtn>
-                <SendBtn
+                {/* <SendBtn
                 icone={"trash"}
                 titulo={"Select"}
                 onPress={() => { }}
                 >
                     <LabelBtn>Send</LabelBtn>
-                </SendBtn>
+                </SendBtn> */}
             </ContainerBtn>
             </Footer>
         </Container>

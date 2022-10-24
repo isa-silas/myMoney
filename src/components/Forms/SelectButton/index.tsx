@@ -8,14 +8,13 @@ import { Container,
 interface Props {
     title: string
     icon: string | null
-    onPress: () => void
+    openModal: () => void
 }
 
 export function SelectButton({
     title,
     icon,
-    onPress,
-    ...rest
+    openModal
 }: Props) {
     return (
         <Container>

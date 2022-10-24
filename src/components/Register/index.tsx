@@ -5,7 +5,7 @@ import {
     Card, CardLabel, Icon, LabelBtn, ContainerBtn
 
 } from "./style"
-import { SelectButton } from "./SelectButton/index"
+import { SelectButton } from "../Forms/SelectButton/index"
 import {Category} from "../../screens/Category"
 
 

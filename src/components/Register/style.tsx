@@ -27,7 +27,6 @@ export const RegisterInfo = styled.View`
 export const RegisterName = styled.TextInput`
     // flex: 1;
     width: 80%;
-    width: 80%;
     background-color: #fff;
     margin: 1%;
     padding:3%;
