@@ -13,23 +13,23 @@ const icones = {
 }
 
 interface Props {
-  tipo: 'up' | 'down'
-  titulo: string
-  ativo: boolean
-  definirTipo: () => void
+  type: 'up' | 'down'
+  title: string
+  active: boolean
+  defineType: () => void
 }
 
-export function TransacaoBotao({
-  titulo,
-  tipo,
-  ativo,
-  definirTipo
+export function TransactionButton({
+  title,
+  type,
+  active,
+  defineType
 }: Props) {
   return (
-    <Container active={ativo} type={tipo}>
-      <Button onPress={definirTipo}>
-        <Icon name={icones[tipo]} type={tipo} />
-        <Title>{titulo}</Title>
+    <Container active={active} type={type}>
+      <Button onPress={defineType}>
+        <Icon name={icones[type]} type={type} />
+        <Title>{title}</Title>
       </Button>
     </Container>
   )

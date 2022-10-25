@@ -2,97 +2,97 @@ import React, { useState } from 'react'
 import { Modal } from 'react-native'
 
 import { Field } from '../../components/Forms/Field'
-import { TransacaoBotao } from '../../componentes/Formulario/TransacaoBotao'
-import { CategoriaSelecaoBotao } from '../../componentes/Formulario/CategoriaSelecaoBotao'
-import { Botao } from '../../componentes/Formulario/Botao'
+import { TransactionButton } from '../../components/Forms/TransactionButton'
+import { SelectButton } from '../../components/Forms/SelectButton'
+import { Button } from '../../components/Forms/Button1'
 
-import { CategoriaSelecao } from '../CategoriaSelecao'
+import { Category } from '../Category'
 
 import {
-  Conteiner,
-  Titulo,
-  Cabecalho,
+  Container,
+  Title,
+  Header,
   Form,
-  CamposConteiner,
-  TransacaoTipos
-} from './estilos'
+  FieldsContainer,
+  TransactionTypes
+} from './style'
 
 
-export function Cadastro() {
+export function Register() {
 
-  const [transacaoTipo, setTransacaoTipo] = useState('')
-  const [categoriaModal, setCategoriaModal] = useState(false)
-  const [categoria, setCategoria] = useState({
-    chave: 'categoria',
-    nome: 'Categoria',
-    icone: 'list'
+  const [transactionType, setTransactionType] = useState('')
+  const [categoryModal, setCategoryModal] = useState(false)
+  const [category, setCategory] = useState({
+    key: 'category',
+    name: 'Category',
+    icon: 'list'
   })
 
-  function abrirCategoriaModal(){
-    setCategoriaModal(true)
+  function openCategoryModal(){
+    setCategoryModal(true)
   }
 
-  function fecharCategoriaModal(){
-    setCategoriaModal(false)    
+  function closeCategoryModal(){
+    setCategoryModal(false)    
   }
 
-  function transacaoTipoSelecao(tipo: 'positivo' | 'negativo') {
-    setTransacaoTipo(tipo)
+  function transactionTypeSelecao(type: 'positive' | 'negative') {
+    setTransactionType(type)
   }
 
   return (
-      <Conteiner>
-        <Cabecalho>
-          <Titulo>Cadastro</Titulo>
-        </Cabecalho>
+      <Container>
+        <Header>
+          <Title>Cadastro</Title>
+        </Header>
 
         <Form>
-          <CamposConteiner>
-            <Campo            
-              textoCampo="Nome"
-              tipoTeclado="default"
+          <FieldsContainer>
+            <Field            
+              txtField="Name"
+              keyboardType="default"
             />
-            <Campo
-              textoCampo="Valor"
-              tipoTeclado="numeric"
+            <Field
+              txtField="Value"
+              keyboardType="numeric"
             />
 
-            <TransacaoTipos>
+            <TransactionTypes>
 
-              <TransacaoBotao
-                titulo="Entrada"
-                tipo="up"
-                definirTipo={() => transacaoTipoSelecao("positivo")}
-                ativo={transacaoTipo === "positivo"}
+              <TransactionButton
+                title="Income"
+                type="up"
+                defineType={() => transactionTypeSelecao("positive")}
+                active={transactionType === "positive"}
               />
-              <TransacaoBotao
-                titulo="Saída"
-                tipo="down"
-                definirTipo={() => transacaoTipoSelecao("negativo")}
-                ativo={transacaoTipo === "negativo"}
+              <TransactionButton
+                title="Outcome"
+                type="down"
+                defineType={() => transactionTypeSelecao("negative")}
+                active={transactionType === "negative"}
               />
               
-            </TransacaoTipos>
+            </TransactionTypes>
 
-            <CategoriaSelecaoBotao
-              icone={categoria.icone}
-              titulo={categoria.nome}
-              abrirModal={abrirCategoriaModal}
+            <SelectButton
+              icon={category.icon}
+              title={category.name}
+              openModal={openCategoryModal}
             />
-          </CamposConteiner>
+          </FieldsContainer>
 
-          <Botao titulo="Enviar" onPress={() => {}}/>
+          <Button title="Send" onPress={() => {}}/>
 
         </Form>
 
-        <Modal visible={categoriaModal}>
-          <CategoriaSelecao 
-            categoria={categoria}
-            selecionarCategoria={setCategoria}
-            fechar={fecharCategoriaModal}
+        <Modal visible={categoryModal}>
+          <Category
+            category={category}
+            selectCategory={setCategory}
+            close={closeCategoryModal}
           />
         </Modal>
 
-      </Conteiner>
+      </Container>
   )
 }

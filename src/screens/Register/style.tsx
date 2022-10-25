@@ -1,11 +1,11 @@
 import styled from 'styled-components/native'
 
-export const Conteiner = styled.View`
+export const Container = styled.View`
   flex: 1;
   background-color: #EAEBEB;
 `
 
-export const Cabecalho = styled.View`
+export const Header = styled.View`
   background-color: #49081f;
   width: 100%;
   height: 113px;
@@ -14,7 +14,7 @@ export const Cabecalho = styled.View`
   padding-bottom: 19px;
 `
 
-export const Titulo = styled.Text`
+export const Title = styled.Text`
   color: #F5F5F5;
   font-size: 22px;
 `
@@ -25,9 +25,9 @@ export const Form = styled.View`
   padding: 24px;
   justify-content: space-between;
 `
-export const CamposConteiner = styled.View``
+export const FieldsContainer = styled.View``
 
-export const TransacaoTipos = styled.View`
+export const TransactionTypes = styled.View`
   flex-direction: row;
   justify-content: space-between;
   margin-top: 8px;

@@ -17,7 +17,7 @@ export function SelectButton({
     openModal
 }: Props) {
     return (
-        <Container>
+        <Container onPress={openModal}>
             <CategorySelect>
                 {icon && <IconFeather name={icon} />}
                 <Category>{title}</Category>
